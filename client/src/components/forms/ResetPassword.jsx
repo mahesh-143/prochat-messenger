@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 
-const Login = () => (
-  <div className="bg-dark h-screen flex flex-col justify-center items-center w-full p-4 lg:w-[50%]">
+const ResetPassword = () => {
+  return (
+    <div className="bg-dark h-screen flex flex-col justify-center items-center w-full p-4 lg:w-[50%]">
     <Formik
-      initialValues={{ email: "", password: "" }}
+      initialValues={{ email: "" }}
       validate={(values) => {
         const errors = {}
         if (!values.email) {
@@ -25,45 +26,46 @@ const Login = () => (
     >
       {({ errors, touched, isSubmitting }) => (
         <Form className="flex flex-col gap-2 max-w-[620px] w-full">
-          <h1 className="text-3xl mb-4 font-medium self-start">Hey, hello👋</h1>
+          <h1 className="text-3xl mb-4 font-medium self-start">Set a new Password 🔒
+ </h1>
           <p className="mb-10 self-start">
-            Enter your login credentials to sign in.
+          Enter your new password.
           </p>
-          <label htmlFor="email" className="font-medium">
-            email
-          </label>
-          <Field
-            type="email"
-            name="email"
-            className={`bg-input h-12 p-1 rounded ${
-              errors.email && "border border-error rounded"
-            }`}
-          />
-          <ErrorMessage name="email" component="div" className="text-error" />
           <label htmlFor="password" className="font-medium">
             password
           </label>
           <Field
             type="password"
             name="password"
-            className={`bg-input h-12 p-1 rounded ${
+            className={`bg-input h-12 p-1 rounded mb-4 ${
               errors.password && "border border-error rounded"
             }`}
           />
           <ErrorMessage name="password" component="div" />
-          <Link to="/forgotpassword" className="text-white/50 self-end mb-4 underline">forgot password?</Link>
+          <label htmlFor="conpassword" className="font-medium">
+            confirm password
+          </label>
+          <Field
+            type="password"
+            name="conpassword"
+            className={`bg-input h-12 p-1 rounded mb-4 ${
+              errors.password && "border border-error rounded"
+            }`}
+          />
+          <ErrorMessage name="password" component="div" />
           <button
             type="submit"
             disabled={isSubmitting}
             className="bg-accent rounded h-12 text-darker font-medium p-1 mb-6"
           >
-            Login
+            Submit
           </button>
-          <p className="text-white/50">Don't have an account? <Link to="signup" className="font-medium text-white underline">Sign Up.</Link></p>
+          <p className="text-white/50"><Link to="/">Back to Login</Link></p>
         </Form>
       )}
     </Formik>
   </div>
-)
+  )
+}
 
-export default Login
+export default ResetPassword
