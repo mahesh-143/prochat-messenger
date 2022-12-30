@@ -1,4 +1,4 @@
-import Hero from "./components/forms/Hero"
+import Hero from "./components/Hero"
 import Login from "./components/forms/Login"
 import LoginForm from "./components/forms/LoginForm"
 
