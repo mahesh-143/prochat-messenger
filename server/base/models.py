@@ -5,6 +5,10 @@ import uuid
 class User(AbstractUser):
     class Meta:
         db_table = 'User'
+    
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
 
     id = models.UUIDField(
         primary_key=True,
