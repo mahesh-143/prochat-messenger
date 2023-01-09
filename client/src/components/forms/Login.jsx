@@ -1,21 +1,17 @@
 import { Link } from "react-router-dom"
 import { Formik, Form, Field, ErrorMessage } from "formik"
+import * as Yup from "yup"
 
 const Login = () => (
   <div className="bg-dark h-screen flex flex-col justify-center items-center w-full p-4 lg:w-[50%]">
     <Formik
       initialValues={{ email: "", password: "" }}
-      validate={(values) => {
-        const errors = {}
-        if (!values.email) {
-          errors.email = "required"
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        ) {
-          errors.email = "invalid email address"
-        }
-        return errors
-      }}
+      validationSchema={Yup.object({
+        email: Yup.string()
+          .email("Invalid email address")
+          .required("Email is required"),
+        password: Yup.string().required("Password is required"),
+      })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2))
@@ -51,7 +47,12 @@ const Login = () => (
             }`}
           />
           <ErrorMessage name="password" component="div" />
-          <Link to="/forgotpassword" className="text-white/50 self-end mb-4 underline">forgot password?</Link>
+          <Link
+            to="/forgotpassword"
+            className="text-white/50 self-end mb-4 underline"
+          >
+            forgot password?
+          </Link>
           <button
             type="submit"
             disabled={isSubmitting}
@@ -59,7 +60,12 @@ const Login = () => (
           >
             Login
           </button>
-          <p className="text-white/50">Don't have an account? <Link to="signup" className="font-medium text-white underline">Sign Up.</Link></p>
+          <p className="text-white/50">
+            Don't have an account?{" "}
+            <Link to="signup" className="font-medium text-white underline">
+              Sign Up.
+            </Link>
+          </p>
         </Form>
       )}
     </Formik>
