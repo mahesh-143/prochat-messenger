@@ -17,8 +17,10 @@ from base.models import User
 @api_view(['GET'])
 def getRoutes(request):
     routes = [
-        '/api/token/',
-        '/api/token/refresh/',
+        'api/register',
+        'api/login',
+        'api/password_reset',
+        'api/password_reset/confirm'
     ]
 
     return Response(routes)
