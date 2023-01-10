@@ -14,4 +14,5 @@ urlpatterns = [
     path('register', views.register_user),
     path('login', views.login_user),
     path('password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
+    path( 'friend', views.add_fried ),
 ]

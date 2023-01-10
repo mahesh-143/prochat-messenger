@@ -24,7 +24,7 @@ class User(AbstractUser):
     bio = models.TextField(null=True)
     verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    forgottoken = models.TextField(null=True)
+
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
@@ -41,3 +41,20 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
         # to:
         [reset_password_token.user.email]
     )
+
+class Friendrequest(models.Model) : 
+    class Meta : 
+        db_table = 'Friendrequest'
+    
+    from_user = models.ForeignKey(
+        'User',
+        on_delete=models.CASCADE,
+        related_name='friend_request_sent',
+    )
+    to_user = models.ForeignKey(
+        'User',
+        on_delete=models.CASCADE,
+        related_name='friend_request_recivied',
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    # accepted = models.BooleanField(default=False)

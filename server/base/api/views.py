@@ -8,8 +8,8 @@ from rest_framework_simplejwt.tokens import (
 from django.contrib.auth import authenticate, login
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
-from .serializers import UserSerializer
-from base.models import User
+from base.models import User, Friendrequest
+from .serializers import FriendRequestSerializer
 
 # Register User to Database
 
@@ -45,6 +45,7 @@ def register_user(request):
     # Create the user
     user = User.objects.create_user(
         username=username, email=email, password=password)
+
     user.save()
 
     access = AccessToken.for_user(user)
@@ -85,3 +86,19 @@ def login_user(request):
         "dateJoined" : user.date_joined
  
     }}, status=status.HTTP_200_OK)
+
+# Add friend
+
+@api_view(['POST'])
+def add_fried(request):
+    # TO DO : check if friendrequest already sent (with from_id and to_id)
+    serializer = FriendRequestSerializer(data=request.data)
+    if not serializer.is_valid():
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    frined_request = serializer.save() 
+    # To DO : send notification to_user, 
+
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    
+
