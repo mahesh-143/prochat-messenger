@@ -6,10 +6,10 @@
 
 
 :root{
-    --clr-body : #212121;
+    --clr-body : #1b1c1e;
     --clr-accent : #C4E309;
-    --clr-input : #3A3A3A;
-    --clr-dark-100 : #121212;
+    --clr-input : #2b2b2b;
+    --clr-dark-100 : #020202;
     --clr-dark-200 : #0A0A0A;
 
     --clr-error : #E10000;
