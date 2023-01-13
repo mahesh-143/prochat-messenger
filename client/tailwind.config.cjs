@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       Inter : "Inter, sans-serif",
+      Script : "Meow Script, cursive",
     },
     extend: {
       colors: {

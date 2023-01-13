@@ -1,9 +1,19 @@
-import React from "react"
-import { useParams } from "react-router-dom"
+import ChatHeader from "../components/UI/ChatHeader"
+import Message from "../components/UI/Message"
+import MsgInput from "../components/UI/MsgInput"
 
-const Conversation = () => {
-  const { id } = useParams()
-  return <div className='text-2xl flex items-center justify-center w-full h-sreen border border-white/30 overflow-y-scroll rounded scrollbar-thin scrollbar-thumb-input'>Conversation {id} </div>
+const Conversation = (props) => {
+  return (
+  <div className='text-2xl flex flex-col w-full border border-white/30 rounded'>
+    
+  <ChatHeader chatId={props.chatId}/>
+  <div className="h-sreen overflow-y-scroll scrollbar-thin scrollbar-thumb-input">
+    <Message />
+  </div>
+  <MsgInput />
+  </div>
+  )
 }
+
 
 export default Conversation

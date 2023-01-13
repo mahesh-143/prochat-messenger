@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { Alien, ChatsCircle, UserPlus, Users } from "phosphor-react"
+import Logo from "../components/UI/Logo"
 
 const LinkItems = [
   { name: "Chats", link: "chats", icon: <ChatsCircle size={30} /> },
@@ -25,7 +26,8 @@ const NavItem = ({ icon, link, children, ...rest }) => {
 
 const Navbar = () => {
   return (
-    <div className="h-screen w-[16rem] sticky top-0 flex flex-col gap-6 px-6 pt-9 bg-dark border border-white/30">
+    <div className="h-screen w-[16rem] sticky top-0 flex flex-col gap-6 px-6 pt-9 bg-dark border-r border-white/30">
+      <Logo />
       {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon} link={link.link}>
           {link.name}

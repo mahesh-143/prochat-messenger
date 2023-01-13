@@ -3,27 +3,27 @@ import Contact from "../components/UI/Contact"
 
 const user = [
     {
-      username: "mahesh",
+      username: "Mahesh Odedara",
       id: "1",
       last_msg: "whats up",
     },
     {
-      username: "Jon Doe",
+      username: "Parth Parmar",
       id: "2",
       last_msg: "hello my friend I have an offer for you",
     },
     {
-      username: "Odedara",
+      username: "Rutvik Sanathara",
       id: "3",
       last_msg: "bye",
     },
     {
-      username: "Odedara",
+      username: "Dharmik Thanki",
       id: "4",
       last_msg: "bye",
     },
     {
-      username: "Odedara",
+      username: "Sagar",
       id: "5",
       last_msg: "bye",
     },
@@ -33,12 +33,12 @@ const user = [
       last_msg: "bye",
     },
     {
-      username: "Odedara",
+      username: "Ramesh",
       id: "6",
       last_msg: "bye",
     },
     {
-      username: "Odedara",
+      username: "Erica",
       id: "6",
       last_msg: "bye",
     },
