@@ -7,7 +7,7 @@ const Conversation = (props) => {
   <div className='text-2xl flex flex-col w-full border border-white/30 rounded'>
     
   <ChatHeader chatId={props.chatId}/>
-  <div className="h-sreen overflow-y-scroll scrollbar-thin scrollbar-thumb-input">
+  <div className="h-sreen overflow-y-scroll scrollbar-thin scrollbar-thumb-input flex flex-col">
     <Message />
   </div>
   <MsgInput />

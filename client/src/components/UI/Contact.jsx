@@ -14,7 +14,7 @@ const Contact = (user) => {
         <h1 className="font-medium mr-2 w-[150px] truncate">{user.user.username}</h1>
 
         <div className="flex items-center justify-between gap-6">
-        <p className="w-[70px] truncate">{user.user.last_msg}</p>
+        <p className="w-[70px] truncate opacity-50">{user.user.last_msg}</p>
         <span className="text-white/50">7 : 58 PM</span>
         </div>
       </div>
