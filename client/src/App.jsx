@@ -10,7 +10,6 @@ import FindFriends from "./pages/FindFriends"
 import Rooms from "./pages/Rooms"
 import FriendRequest from "./pages/FriendRequests"
 import Chats from "./pages/Chats"
-import Chat from  "./pages/Chat"
 
 function App() {
   return (
@@ -23,7 +22,9 @@ function App() {
         <Route path="/findfriends" element={<FindFriends />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/friendrequests" element={<FriendRequest />} />
-        <Route path="/chats/:id" element={<Chat />} />
+        <Route path="/chats/:id" element={<Chats />} />
+        <Route path="/findfriends/:id" element={<FindFriends />}/>
+        <Route path="/rooms/:id" element={<Rooms />}/>
         </Route>
 
         <Route element={<WithHero />}>

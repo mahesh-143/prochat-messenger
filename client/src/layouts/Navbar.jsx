@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom"
-import { Alien, ChatsCircle, UserPlus, Users } from "phosphor-react"
+import { ChatsCircle, Bell, Users, UserPlus } from "phosphor-react"
 import Logo from "../components/UI/Logo"
 
 const LinkItems = [
   { name: "Chats", link: "chats", icon: <ChatsCircle size={30} /> },
-  { name: "Find Friends", link: "findfriends", icon: <Alien size={30} /> },
+  { name: "Find Friends", link: "findfriends", icon: <UserPlus size={30} /> },
   { name: "Rooms", link: "rooms", icon: <Users size={30} /> },
   {
-    name: "Friend Requests",
-    link: "friendrequests",
-    icon: <UserPlus size={30} />,
+    name: "Notifications",
+    link: "notification",
+    icon: <Bell size={30} />,
   },
 ]
 
