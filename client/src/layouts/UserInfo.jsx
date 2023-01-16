@@ -2,10 +2,8 @@ import Avatar from "react-avatar"
 import FindFriendsIntro from "./FindFriendsIntro"
 
 const UserInfo = (props) => {
-  console.log(props.userId)
   return (
     <div className="text-2xl flex flex-col w-full border border-white/30 rounded">
-      {props.userId ? (
         <div className="flex flex-col items-center mt-16 gap-5">
           <Avatar name="Odedara Mahesh" className="rounded-full" />
           <h1 className="font-medium text-5xl">Odedara Mahesh</h1>
@@ -14,9 +12,6 @@ const UserInfo = (props) => {
             Add Friend
           </button>
         </div>
-      ) : (
-        <FindFriendsIntro />
-      )}
     </div>
   )
 }

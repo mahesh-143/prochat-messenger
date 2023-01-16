@@ -1,6 +1,7 @@
 import Users from "../layouts/Users"
 import UserInfo from "../layouts/UserInfo"
 import { useParams } from "react-router-dom"
+import FindFriendsIntro from "../layouts/FindFriendsIntro"
 
 const FindFriends = () => {
   const { id } = useParams()
@@ -8,7 +9,9 @@ const FindFriends = () => {
   return (
     <div className="flex w-full max-w-5xl bg-dark h-[95vh] my-auto mx-auto">
       <Users />
-      <UserInfo userId={id} />
+      {
+        id ? <UserInfo userId={id}/> : <FindFriendsIntro />
+      }
     </div>
   )
 }

@@ -8,8 +8,9 @@ import WithHero from "./layouts/WithHero"
 import WithSidebar from "./layouts/WithSidebar"
 import FindFriends from "./pages/FindFriends"
 import Rooms from "./pages/Rooms"
-import FriendRequest from "./pages/FriendRequests"
 import Chats from "./pages/Chats"
+import UserInfo from "./layouts/UserInfo"
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
@@ -21,10 +22,10 @@ function App() {
         <Route path="/chats" element={<Chats />} />
         <Route path="/findfriends" element={<FindFriends />} />
         <Route path="/rooms" element={<Rooms />} />
-        <Route path="/friendrequests" element={<FriendRequest />} />
         <Route path="/chats/:id" element={<Chats />} />
         <Route path="/findfriends/:id" element={<FindFriends />}/>
         <Route path="/rooms/:id" element={<Rooms />}/>
+        <Route path="/user/:id" element={<UserInfo />}/>
         </Route>
 
         <Route element={<WithHero />}>
@@ -33,6 +34,8 @@ function App() {
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
         </Route>
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
     </>
