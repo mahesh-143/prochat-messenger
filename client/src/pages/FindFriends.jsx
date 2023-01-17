@@ -9,9 +9,7 @@ const FindFriends = () => {
   return (
     <div className="flex w-full max-w-5xl bg-dark h-[95vh] my-auto mx-auto">
       <Users />
-      {
-        id ? <UserInfo userId={id}/> : <FindFriendsIntro />
-      }
+      <UserInfo userId={id}/> 
     </div>
   )
 }
