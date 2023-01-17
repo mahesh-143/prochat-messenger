@@ -11,6 +11,7 @@ import Rooms from "./pages/Rooms"
 import Chats from "./pages/Chats"
 import UserInfo from "./layouts/UserInfo"
 import NotFound from "./pages/NotFound"
+import MyProfile from "./components/UI/MyProfile"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/findfriends/:id" element={<FindFriends />}/>
         <Route path="/rooms/:id" element={<Rooms />}/>
         <Route path="/user/:id" element={<UserInfo />}/>
+        <Route path="/myprofile" element={<MyProfile />} />
         </Route>
 
         <Route element={<WithHero />}>

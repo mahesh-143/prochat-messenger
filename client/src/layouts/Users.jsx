@@ -65,7 +65,7 @@ const user = [
   ]
 const Users = () => {
   return (
-    <div className="flex flex-col items-center px-4 bg-dark border border-white/30 w-[25rem] overflow-y-scroll rounded scrollbar-thin scrollbar-thumb-input">{user.map((user, index) => {
+    <div className="flex flex-col items-center px-4 bg-dark border border-white/30 w-[24rem] overflow-y-scroll rounded scrollbar-thin scrollbar-thumb-input">{user.map((user, index) => {
         return <User key={index} user={user} />
       })}</div>
   )
