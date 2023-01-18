@@ -4,7 +4,7 @@ import Avatar from "react-avatar"
 const User = (user) => {
   console.log(user)
   return (
-    <Link to={'findfriends/'+user.user.id} className="py-4 flex items-center gap-4">
+    <Link to={'/findfriends/'+user.user.id} className="py-4 flex items-center gap-4">
 
       {/* <div className="rounded-full bg-yellow-500 h-[50px] w-[50px]"></div> */}
       <Avatar name={user.user.username} className="rounded-full" size="60"/>

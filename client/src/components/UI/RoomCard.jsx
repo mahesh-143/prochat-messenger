@@ -5,7 +5,7 @@ const RoomCard = (props) => {
   console.log(props)
   return (
     <Link
-      to={"rooms/" + props.room.id}
+      to={"/rooms/" + props.room.id}
       className="py-4 px-5 flex items-center gap-4 bg-darker rounded my-1"
     >
       <Avatar className="rounded-full" size="60" />
