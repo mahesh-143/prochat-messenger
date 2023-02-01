@@ -80,6 +80,7 @@ def login_user(request):
 
     # Return a success response
     return Response({"message": "Login successful", "accessToken": str(access), "refreshToken": str(refresh), "user" : {
+        "id" : user.id,
         "username" : user.username,
         "email" : user.email,
         "bio" : user.bio,
@@ -95,7 +96,8 @@ def add_fried(request):
     serializer = FriendRequestSerializer(data=request.data)
     if not serializer.is_valid():
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    frined_request = serializer.save() 
+    
+    friend_request = serializer.save() 
     # To DO : send notification to_user, 
 
     return Response(serializer.data, status=status.HTTP_201_CREATED)

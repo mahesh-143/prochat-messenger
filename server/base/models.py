@@ -11,7 +11,7 @@ class User(AbstractUser):
         db_table = 'User'
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
 
 
     id = models.UUIDField(
@@ -24,7 +24,6 @@ class User(AbstractUser):
     bio = models.TextField(null=True)
     verified = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-
 
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
