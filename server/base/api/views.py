@@ -1,4 +1,5 @@
 from rest_framework import status
+from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework_simplejwt.tokens import (
@@ -7,9 +8,8 @@ from rest_framework_simplejwt.tokens import (
 )
 from django.contrib.auth import authenticate, login
 from django.utils.translation import gettext_lazy as _
-from rest_framework import status
-from base.models import User, Friendrequest
-from .serializers import FriendRequestSerializer
+from base.models import User, Friendrequest, FriendList
+from .serializers import FriendRequestSerializer, FriendListSerializer
 
 # Register User to Database
 
