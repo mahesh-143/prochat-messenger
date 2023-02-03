@@ -106,7 +106,7 @@ class Friendrequest(models.Model) :
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.from_user.username
+        return self.sender.username
 
     def accept(self):
         """
