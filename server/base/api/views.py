@@ -9,7 +9,7 @@ from rest_framework_simplejwt.tokens import (
 from django.contrib.auth import authenticate, login
 from django.utils.translation import gettext_lazy as _
 from base.models import User, Friendrequest, FriendList
-from .serializers import FriendRequestSerializer, FriendListSerializer
+from .serializers import UserSerializer, FriendRequestSerializer, FriendListSerializer
 
 # Register User to Database
 
@@ -88,19 +88,40 @@ def login_user(request):
  
     }}, status=status.HTTP_200_OK)
 
+# fetch all users
+
+class UserListView(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
 # Add friend
 
-@api_view(['POST'])
-def add_fried(request):
-    # TO DO : check if friendrequest already sent (with from_id and to_id)
-    serializer = FriendRequestSerializer(data=request.data)
-    if not serializer.is_valid():
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# @api_view(['POST'])
+# def add_fried(request):
+#     # TO DO : check if friendrequest already sent (with from_id and to_id)
+#     serializer = FriendRequestSerializer(data=request.data)
+#     if not serializer.is_valid():
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-    friend_request = serializer.save() 
-    # To DO : send notification to_user, 
+#     friend_request = serializer.save() 
+#     # To DO : send notification to_user, 
 
-    return Response(serializer.data, status=status.HTTP_201_CREATED)
+#     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+class FriendListCreateAPIView(generics.CreateAPIView):
+    queryset = FriendList.objects.all()
+    serializer_class = FriendListSerializer
+
+class FriendListRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
+    queryset = FriendList.objects.all()
+    serializer_class = FriendListSerializer
+
+class FriendRequestCreateAPIView(generics.CreateAPIView):
+    queryset = Friendrequest.objects.all()
+    serializer_class = FriendRequestSerializer
+
+class FriendRequestRetrieveUpdateAPIView(generics.RetrieveUpdateAPIView):
+    queryset = Friendrequest.objects.all()
+    serializer_class = FriendRequestSerializer
     
 
